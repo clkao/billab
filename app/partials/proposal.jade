@@ -1,0 +1,7 @@
+.proposal-content
+  h2 {{user}} / {{proposal}}
+  hr
+  p {{data.meta.abstract}}
+
+  .content.default(ng-repeat="(i, d) in data.content")
+    .bill(ng-repeat="amendment in d",repeat-done,ly-diff="{comment: amendment.comment, left: amendment.baseContent, right: amendment.content, heading: amendment.originalArticle, anchor: amendment.originalArticle}")

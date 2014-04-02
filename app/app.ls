@@ -1,16 +1,20 @@
 # Declare app level module which depends on filters, and services
 
-angular.module "App" <[app.templates ui.router]>
+angular.module "App" <[app.templates ui.router billab.proposal ly.diff]>
 
 .config <[$stateProvider $urlRouterProvider $locationProvider]> ++ ($stateProvider, $urlRouterProvider, $locationProvider) ->
   $stateProvider
+    .state 'proposal' do
+      url: '/{user}/{proposal}'
+      templateUrl: 'app/partials/proposal.html'
+      controller: "ProposalCtrl"
     .state 'about' do
       url: '/about'
       templateUrl: 'app/partials/about.html'
       controller: "About"
     # Catch all
   $urlRouterProvider
-    .otherwise('/about')
+    .otherwise('/citizens/proposal-dummy')
 
   # Without serve side support html5 must be disabled.
   $locationProvider.html5Mode true
