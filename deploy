@@ -31,6 +31,7 @@ fi
 BUILD=git-$REV ./node_modules/.bin/gulp --require LiveScript --env production build
 
 cd _public
+cp index.html 404.html
 git fetch --depth 1 origin master:master || git fetch origin master:master
 git add -A .
 if git rev-parse --verify HEAD; then
