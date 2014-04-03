@@ -2,7 +2,7 @@ angular.module 'billab.proposal' []
 .factory BillabService: <[$http]> ++ ($http) ->
   do
     get-proposal: (user, proposal) ->
-      $http.get '/data/cross-strait-agreement-act.json'
+      $http.get "/data/#{proposal}.json"
 
 
 .controller ProposalCtrl: <[$scope BillabService]> ++ ($scope, BillabService) ->
