@@ -14,7 +14,8 @@
     "angular": "1.2.14",
     "angular-mocks": "1.2.14",
     "angular-scenario": "1.2.14",
-    "angular-ui-router": "0.2.10"
+    "angular-ui-router": "0.2.10",
+    "angular-disqus": "1.1.0"
   },
   "overrides": {
     "angular": {
