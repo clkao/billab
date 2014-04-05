@@ -1,8 +1,8 @@
 # Declare app level module which depends on filters, and services
 
-angular.module "App" <[app.templates ui.router billab.proposal ly.diff]>
+angular.module "App" <[app.templates ui.router billab.proposal ly.diff ngDisqus]>
 
-.config <[$stateProvider $urlRouterProvider $locationProvider]> ++ ($stateProvider, $urlRouterProvider, $locationProvider) ->
+.config <[$stateProvider $urlRouterProvider $locationProvider $disqusProvider]> ++ ($stateProvider, $urlRouterProvider, $locationProvider, $disqusProvider) ->
   $stateProvider
     .state 'proposal' do
       url: '/{user}/{proposal}'
@@ -19,6 +19,7 @@ angular.module "App" <[app.templates ui.router billab.proposal ly.diff]>
   # Without serve side support html5 must be disabled.
   $locationProvider.html5Mode true
 
+  $disqusProvider.setShortname 'billab'
 .run <[$rootScope $state $stateParams $location $window $anchorScroll]> ++ ($rootScope, $state, $stateParams, $location, $window, $anchorScroll) ->
   $rootScope.$state = $state
   $rootScope.$stateParam = $stateParams

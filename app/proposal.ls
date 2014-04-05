@@ -10,4 +10,5 @@ angular.module 'billab.proposal' []
   # XXX watch or resolve with ui-state
   $scope <<< $scope.$stateParam{user, proposal}
   data <- BillabService.get-proposal $scope.user, $scope.proposal .success
+  $scope.id = $scope.user + '-' + $scope.proposal
   $scope.data = data
