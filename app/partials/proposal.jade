@@ -1,7 +1,8 @@
-.proposal-content
+.ui.segment
   h2 {{user}} / {{proposal}}
   hr
   p {{data.meta.abstract}}
+  .ui.page.grid.proposal-content
 
-  .content.default(ng-repeat="(i, d) in data.content")
-    .bill(ng-repeat="amendment in d",repeat-done,ly-diff="{comment: amendment.comment, left: amendment.baseContent, right: amendment.content, heading: amendment.originalArticle, headingRight: amendment.article, anchor: amendment.originalArticle, anchorRight: amendment.article}")
+    .content.default(ng-repeat="(i, d) in data.content")
+      .bill(ng-repeat="amendment in d",repeat-done,ly-diff="{comment: amendment.comment, left: amendment.baseContent, right: amendment.content, heading: amendment.originalArticle, headingRight: amendment.article, anchor: amendment.originalArticle, anchorRight: amendment.article}")
