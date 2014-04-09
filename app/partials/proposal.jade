@@ -1,8 +1,10 @@
-.ui.segment
+.ui.segment.proposal-container.with-menu
+  .ui.vertical.pointing.menu.proposal-menu
+    .menu(ng-repeat="(i, d) in data.content")
+      a.item(ng-repeat="amendment in d" ng-href="{{'#proposed-'+amendment.article}}") {{amendment.article}}
   h2 {{user}} / {{proposal}}
   hr
   p {{data.meta.abstract}}
   .ui.page.grid.proposal-content
-
     .content.default(ng-repeat="(i, d) in data.content")
       .bill(ng-repeat="amendment in d",repeat-done,ly-diff="{comment: amendment.comment, left: amendment.baseContent, right: amendment.content, heading: amendment.originalArticle, headingRight: amendment.article, anchor: amendment.originalArticle, anchorRight: amendment.article}")
