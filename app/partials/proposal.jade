@@ -1,7 +1,4 @@
-.ui.segment.proposal-container.with-menu
-  .ui.vertical.pointing.menu.proposal-menu
-    .menu(ng-repeat="(i, d) in data.content")
-      a.item(ng-repeat="amendment in d" ng-href="{{'#proposed-'+amendment.article}}") {{amendment.article}}
+.ui.segment.proposal-container(scroll-spy offset="100" anchor=".bill .right a" box=".bill")
   h2 {{user}} / {{proposal}}
   hr
   p {{data.meta.abstract}}

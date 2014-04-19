@@ -1,0 +1,24 @@
+menu-width = 8rem
+
+.scroll-spy
+  ul.spy-menu.ui.vertical.menu
+    display none
+    position fixed
+    top 43px
+    bottom 43px
+    left 0
+    margin 0
+    margin-bottom -43px
+    padding 0
+    overflow-y scroll
+    width menu-width
+    a.item
+      outline 0
+    li.highlight
+      background-color: #e0e0c3
+  &.show-menu
+    .spy-menu.ui.vertical.menu
+      display block
+    .spy-content
+      padding-left menu-width
+
