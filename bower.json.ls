@@ -11,6 +11,7 @@ dependencies:
   "angular-mocks": "1.2.14"
   "angular-scenario": "1.2.14"
   "angular-ui-router": "0.2.10"
+  "jquery-scrollintoview": "Arwid/jQuery.scrollIntoView"
 
 overrides:
   "angular":
@@ -19,3 +20,6 @@ overrides:
     main: "README.md"
   "angular-scenario":
     main: "README.md"
+  "jquery-scrollintoview":
+    main: "jquery.scrollIntoView.js"
+

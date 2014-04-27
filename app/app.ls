@@ -1,6 +1,6 @@
 # Declare app level module which depends on filters, and services
 
-angular.module "App" <[app.templates ui.router billab.proposal ly.diff]>
+angular.module "App" <[app.templates ui.router billab.proposal ly.diff ly.spy]>
 
 .config <[$stateProvider $urlRouterProvider $locationProvider]> ++ ($stateProvider, $urlRouterProvider, $locationProvider) ->
   $stateProvider
