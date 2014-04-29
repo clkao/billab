@@ -32,12 +32,23 @@ angular.module 'ly.spy' []
     var p
     $window.onscroll = (event) ->
       var c
-      for item in $scope.targets
-        c = item
+      head = 0
+      tail = $scope.targets.length
+      for ever
+        if head is tail
+          c = void
+          break
+        i = (head + tail) / 2
+        i = ~~i
+        c = $scope.targets[i]
         top    = c.box.offset!top + c.offset
         bottom = c.box.height! + top
-        break if top <= scroll-y < bottom
-        c = null
+        if top <= scroll-y < bottom
+          break
+        else if scroll-y < top
+          tail = i
+        else if scroll-y >= bottom
+          head = i + 1
       if p isnt c
         $scope.$apply ->
           p?highlight = off
